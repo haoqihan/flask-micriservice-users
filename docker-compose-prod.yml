@@ -3,14 +3,14 @@ version: '3.8'
 services:
   users-db:
     container_name: users-db
-    build: ./project/db
+    build: project/db
     environment:
       - MYSQL_ROOT_PASSWORD=root123
     healthcheck:
       test: exit 0
   users-service:
-    container_name: users-service
-    build: .
+    container_name: users-services
+    build: services/users
     expose:
       - 5000
     environment:

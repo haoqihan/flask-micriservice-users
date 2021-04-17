@@ -1,6 +1,7 @@
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 
 # 初始化数据库
 db = SQLAlchemy()
@@ -9,6 +10,10 @@ db = SQLAlchemy()
 def create_app():
     # 初始化app
     app = Flask(__name__)
+
+    # 允许跨域
+    CORS(app)
+
     # 环境配置
     app_settings = os.getenv("APP_SETTINGS")
     app.config.from_object(app_settings)
