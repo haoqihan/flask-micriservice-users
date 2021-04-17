@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 ADD ./requirements.txt /usr/src/app/requirements.txt
 
 # 安装依赖
-RUN pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip install -r requirements.txt
 
 # 添加应用
 ADD . /usr/src/app
