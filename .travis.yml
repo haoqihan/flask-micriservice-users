@@ -16,8 +16,9 @@ before_script:
   - docker-compose -f docker-compose.yml up --build -d
 
 script:
+  - sleep 3
   - docker-compose -f docker-compose.yml run users-service python manage.py test
-  - docker-compose -f docker-compose.yml run users-service python flake8 project
+  - docker-compose -f docker-compose.yml run users-service  flake8 project
 
 after_script:
   - docker-compose -f docker-compose.yml down
